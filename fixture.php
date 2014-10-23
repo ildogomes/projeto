@@ -12,28 +12,25 @@ $criatabela = "CREATE TABLE IF NOT EXISTS paginas (  `id` int(11) NOT NULL AUTO_
   `conteudo` varchar(5000) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
-$stmt = $conexao->prepare($criatabela);
-$stmt->execute();
+$stmt1 = $conexao->prepare($criatabela);
+$stmt1->execute();
 
 $sqlTruncade = "TRUNCATE TABLE paginas";
-$stmt = $conexao->prepare($sqlTruncade);
-$stmt->execute();
+$stmt2 = $conexao->prepare($sqlTruncade);
+$stmt2->execute();
 
 $sqlHome = "INSERT INTO paginas(nome, conteudo) VALUES ('home', 'Conteudo da pagina Home')";
-$stmt = $conexao->prepare($sqlHome);
-$stmt->execute();
+$stmt3 = $conexao->prepare($sqlHome);
+$stmt3->execute();
 
 $sqlEmpresa = "INSERT INTO paginas(nome, conteudo) VALUES ('empresa', 'Conteudo da pagina Empresa')";
-$stmt = $conexao->prepare($sqlEmpresa);
-$stmt->execute();
+$stmt4 = $conexao->prepare($sqlEmpresa);
+$stmt4->execute();
 
 $sqlProduto = "INSERT INTO paginas(nome, conteudo) VALUES ('produtos', 'Conteudo da pagina Produtos')";
-$stmt = $conexao->prepare($sqlProduto);
-$stmt->execute();
+$stmt5 = $conexao->prepare($sqlProduto);
+$stmt5->execute();
 
 $sqlServicos = "INSERT INTO paginas(nome, conteudo) VALUES ('servicos', 'Conteudo da pagina Servicos')";
-$stmt = $conexao->prepare($sqlServicos);
-$stmt->execute();
-
-
-
+$stmt6 = $conexao->prepare($sqlServicos);
+$stmt6->execute();
