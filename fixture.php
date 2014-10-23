@@ -1,6 +1,20 @@
 <?php
 require_once 'conexao.php';
 
+
+$sqlDrop = "DROP TABLE IF EXISTS paginas";
+$stmt = $conexao->prepare($sqlDrop);
+$stmt->execute();
+
+
+$criatabela = "CREATE TABLE IF NOT EXISTS paginas (  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `conteudo` varchar(5000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
+$stmt = $conexao->prepare($criatabela);
+$stmt->execute();
+
 $sqlTruncade = "TRUNCATE TABLE paginas";
 $stmt = $conexao->prepare($sqlTruncade);
 $stmt->execute();
