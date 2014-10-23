@@ -21,7 +21,7 @@ date_default_timezone_set('Brazil/East');
                         <a class="btn" href="empresa">Empresa</a>
                         <a class="btn" href="produtos">Produtos</a>
                         <a class="btn" href="servicos">Serviços</a>
-                        
+                        <a class="btn" href="contato">Contato</a>
                     </nav>
                 </nav>
             </div>

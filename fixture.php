@@ -34,3 +34,7 @@ $stmt5->execute();
 $sqlServicos = "INSERT INTO paginas(nome, conteudo) VALUES ('servicos', 'Conteudo da pagina Servicos')";
 $stmt6 = $conexao->prepare($sqlServicos);
 $stmt6->execute();
+
+$sqlServicos = "INSERT INTO paginas(nome, conteudo) VALUES ('contato', '')";
+$stmt7 = $conexao->prepare($sqlServicos);
+$stmt7->execute();
