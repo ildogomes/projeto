@@ -9,11 +9,14 @@
             $assunto = trim($_POST['assunto']);
             $mensagem = trim($_POST['mensagem']);
 						
-						$dados_produto = array('nome'=>$nome, 'email'=>$email, 'assunto'=>$assunto,'mensagem'=>$mensagem);
-
- $sql = "INSERT INTO contato(nome,email,assunto, mensagem) VALUES (:nome, :email,:assunto,:mensagem)";
- $stmt = $conexao->prepare($sql);
- $stmt->execute($dados_produto);
+				
+						$sql = "INSERT INTO contato(nome,email,assunto, mensagem) VALUES (:nome, :email,:assunto,:mensagem)";
+						$stmt = $conexao->prepare($sql);
+						$stmt->bindParam(':nome', $nome);
+						$stmt->bindParam(':email', $email);
+						$stmt->bindParam(':assunto', $assunto);
+						$stmt->bindParam(':mensagem', $mensagem);
+						$stmt->execute();
 
 unset($conexao);
  
@@ -22,10 +25,10 @@ unset($conexao);
                     <form class='form-signin'>
                     <h4 class='form-signin-heading'>Dados enviados com sucesso, abaixo os dados enviados. </h4>
                     <fieldset>
-                        <p>$nome</p><br>
-                        <p>$email</p><br>
-                        <p>$assunto</p><br>
-                        <p>$mensagem</p><br>
+                        <p>$nome</p>
+                        <p>$email</p
+                        <p>$assunto</p>
+                        <p>$mensagem</p>
                     </fieldset>
                     </form>
                 </div> ";
