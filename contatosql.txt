@@ -1,0 +1,7 @@
+CREATE TABLE `code_foundation`.`contato` (
+  `idcontato` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(255) NULL,
+  `email` VARCHAR(255) NULL,
+  `assunto` VARCHAR(500) NULL,
+  `mensagem` VARCHAR(5000) NULL,
+  PRIMARY KEY (`idcontato`));

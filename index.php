@@ -69,7 +69,7 @@ if ($stmt->rowCount() > 0) {
             <tr>
                 <td colspan="2">
                     <div align="center">
-                        <input type="button" value="Enviar" name="btn_enviar" class="btn btn-success"
+                        <input type="submit" value="Enviar" name="btn_enviar" class="btn btn-success"
                                onClick="valida()">
                     </div>
                 </td>

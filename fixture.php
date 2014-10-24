@@ -35,6 +35,21 @@ $sqlServicos = "INSERT INTO paginas(nome, conteudo) VALUES ('servicos', 'Conteud
 $stmt6 = $conexao->prepare($sqlServicos);
 $stmt6->execute();
 
-$sqlServicos = "INSERT INTO paginas(nome, conteudo) VALUES ('contato', '')";
-$stmt7 = $conexao->prepare($sqlServicos);
+$sqlContato = "INSERT INTO paginas(nome, conteudo) VALUES ('contato', '')";
+$stmt7 = $conexao->prepare($sqlContato);
 $stmt7->execute();
+
+
+$sqlDropContato = "DROP TABLE IF EXISTS contato";
+$stmt8 = $conexao->prepare($sqlDropContato);
+$stmt8->execute();
+
+
+$criaTabelaContato = "CREATE TABLE IF NOT EXISTS contato (  `idcontato` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(255) NULL,
+  `email` VARCHAR(255) NULL,
+  `assunto` VARCHAR(500) NULL,
+  `mensagem` VARCHAR(5000) NULL,
+  PRIMARY KEY (`idcontato`));";
+$stmt9 = $conexao->prepare($criaTabelaContato);
+$stmt9->execute();
